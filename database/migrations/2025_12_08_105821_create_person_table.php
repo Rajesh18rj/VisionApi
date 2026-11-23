@@ -14,6 +14,7 @@ return new class extends Migration
     {
         Schema::create('person', function (Blueprint $table) {
             BlueprintHelper::BaseEntity($table);
+
             $table->string("name");
             $table->string("gender")->nullable();
             $table->string("register_number")->nullable();
@@ -21,14 +22,15 @@ return new class extends Migration
             $table->string("email")->nullable();
             $table->longText("image")->nullable();
             $table->longText("address")->nullable();
-            $table->uuid("category_id")->nullable()->index();
-            $table->foreign("category_id")->references("id")->on("category")->onDelete("restrict");
-            $table->uuid("department_id")->nullable()->index();
-            $table->foreign("department_id")->references("id")->on("department")->onDelete("restrict");
-            $table->uuid("designation_id")->nullable()->index();
-            $table->foreign("designation_id")->references("id")->on("designation")->onDelete("restrict");
-            $table->string("contact_person_name")->nullable();
-            $table->string("contact_person_number")->nullable();
+            $table->enum('category', ['Person', 'Employee'])->default('Person');
+
+
+            $table->uuid("person_type_id")->nullable()->index();
+            $table->foreign("person_type_id")
+                ->references("id")
+                ->on("person_type")
+                ->onDelete("restrict");
+
             $table->boolean("is_active")->default(0);
             $table->binary('face_embedding')->nullable();
             $table->unsignedBigInteger("display_order")->default(0);

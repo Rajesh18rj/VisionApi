@@ -5,10 +5,12 @@
         "description": "API documentation for the project.",
         "version": "1.0.0"
     },
-    "servers": [{
-        "url": "https://milkymist.camlytix.ai/",
-        "description": "Main API Server"
-    }],
+    "servers": [
+        {
+            "url": "http://127.0.0.1:8000/",
+            "description": "Main API Server"
+        }
+    ],
     "paths": {
         "/api/AppSettingsList": {
             "get": {
@@ -25,9 +27,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/AppSettingsById/{id}": {
@@ -37,16 +41,18 @@
                 ],
                 "summary": "Get AppSettings by ID",
                 "operationId": "e1820dcc8b9c0ef8cc089ca574772213",
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "description": "AppSettings ID",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "example": ""
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "AppSettings ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": ""
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "AppSettings data"
@@ -58,9 +64,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/AppSettingsInsert": {
@@ -132,9 +140,11 @@
                         }
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/AppSettingsUpdate": {
@@ -201,9 +211,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/AppSettingsDelete/{id}": {
@@ -213,16 +225,18 @@
                 ],
                 "summary": "Delete a AppSettings by ID",
                 "operationId": "2ab6045d02f84119cba6c7f0c37e3c63",
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "description": "AppSettings ID",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "example": ""
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "AppSettings ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": ""
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "Deleted successfully"
@@ -234,9 +248,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/BlockList": {
@@ -254,9 +270,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/BlockById/{id}": {
@@ -266,16 +284,18 @@
                 ],
                 "summary": "Get Block by ID",
                 "operationId": "93388696f20baa9950a5518da0ad7c69",
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "description": "Block ID",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "example": ""
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Block ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": ""
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "Block data"
@@ -287,9 +307,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/BlockInsert": {
@@ -361,9 +383,11 @@
                         }
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/BlockUpdate": {
@@ -430,9 +454,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/BlockDelete/{id}": {
@@ -442,16 +468,18 @@
                 ],
                 "summary": "Delete a Block by ID",
                 "operationId": "599f733e5d6d3fd6d68623940c51fe23",
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "description": "Block ID",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "example": ""
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Block ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": ""
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "Deleted successfully"
@@ -463,9 +491,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/CameraList": {
@@ -483,9 +513,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/CameraById/{id}": {
@@ -495,16 +527,18 @@
                 ],
                 "summary": "Get Camera by ID",
                 "operationId": "2bf5132fb40cba597402353aa9a394e3",
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "description": "Camera ID",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "example": ""
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Camera ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": ""
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "Camera data"
@@ -516,9 +550,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/CameraInsert": {
@@ -705,9 +741,11 @@
                         }
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/CameraUpdate": {
@@ -889,9 +927,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/CameraDelete/{id}": {
@@ -901,16 +941,18 @@
                 ],
                 "summary": "Delete a Camera by ID",
                 "operationId": "09a675bf20fc588dbfcde12eeccb6880",
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "description": "Camera ID",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "example": ""
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Camera ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": ""
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "Deleted successfully"
@@ -922,9 +964,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/CategoryList": {
@@ -942,9 +986,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/CategoryById/{id}": {
@@ -954,16 +1000,18 @@
                 ],
                 "summary": "Get Category by ID",
                 "operationId": "700f187e1bff6ffef7593defa4be656b",
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "description": "Category ID",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "example": ""
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Category ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": ""
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "Category data"
@@ -975,9 +1023,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/CategoryInsert": {
@@ -1049,9 +1099,11 @@
                         }
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/CategoryUpdate": {
@@ -1118,9 +1170,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/CategoryDelete/{id}": {
@@ -1130,16 +1184,18 @@
                 ],
                 "summary": "Delete a Category by ID",
                 "operationId": "3bef7500455ccbf17f18abf7611738d6",
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "description": "Category ID",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "example": ""
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Category ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": ""
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "Deleted successfully"
@@ -1151,9 +1207,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/DashBoardStaffList": {
@@ -1217,9 +1275,11 @@
                         }
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/DashBoardStudentDetailList/{person_id}": {
@@ -1229,16 +1289,18 @@
                 ],
                 "summary": "Get Student Detail by ID",
                 "operationId": "bb50276838a48952927805ee56ef1645",
-                "parameters": [{
-                    "name": "person_id",
-                    "in": "path",
-                    "description": "Person ID",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "example": ""
+                "parameters": [
+                    {
+                        "name": "person_id",
+                        "in": "path",
+                        "description": "Person ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": ""
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "Category data"
@@ -1250,9 +1312,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/CameraPing": {
@@ -1305,9 +1369,11 @@
                         }
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/DashBoardStudentViewById/{person_id}": {
@@ -1317,16 +1383,18 @@
                 ],
                 "summary": "Get Student Detail by ID",
                 "operationId": "d0afeb6c26328114832a68d35e0eb382",
-                "parameters": [{
-                    "name": "person_id",
-                    "in": "path",
-                    "description": "Person ID",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "example": ""
+                "parameters": [
+                    {
+                        "name": "person_id",
+                        "in": "path",
+                        "description": "Person ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": ""
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "Category data"
@@ -1338,9 +1406,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/DashBoardNotificationList/{user_id}/{gender}/{department_id}": {
@@ -1350,7 +1420,8 @@
                 ],
                 "summary": "Get Student Detail by ID",
                 "operationId": "db72ece38b7984417ff93b0779bf7f0e",
-                "parameters": [{
+                "parameters": [
+                    {
                         "name": "user_id",
                         "in": "path",
                         "description": "User ID",
@@ -1392,9 +1463,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/DashBoardChartList": {
@@ -1415,9 +1488,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/LiveAttendanceList": {
@@ -1438,9 +1513,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/LiveGroupAttendanceList/{group_id}": {
@@ -1450,14 +1527,16 @@
                 ],
                 "summary": "Get live attendance data for a specific group",
                 "operationId": "8dc25cdacabce31f5b85cd17775cb662",
-                "parameters": [{
-                    "name": "group_id",
-                    "in": "path",
-                    "required": true,
-                    "schema": {
-                        "type": "string"
+                "parameters": [
+                    {
+                        "name": "group_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "DashBoard data"
@@ -1469,9 +1548,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/Footprint/{person_id}/{date}": {
@@ -1481,7 +1562,8 @@
                 ],
                 "summary": "Person Footprint",
                 "operationId": "d7fe3ae3870009c7c730c6a4dadf303a",
-                "parameters": [{
+                "parameters": [
+                    {
                         "name": "person_id",
                         "in": "path",
                         "required": true,
@@ -1504,9 +1586,11 @@
                         "description": "Footprint List"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/DepartmentList": {
@@ -1524,9 +1608,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/DepartmentById/{id}": {
@@ -1536,16 +1622,18 @@
                 ],
                 "summary": "Get Department by ID",
                 "operationId": "af4906cd65b3e7f09cc78f579eae8d2f",
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "description": "Department ID",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "example": ""
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Department ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": ""
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "Department data"
@@ -1557,9 +1645,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/DepartmentInsert": {
@@ -1638,9 +1728,11 @@
                         }
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/DepartmentUpdate": {
@@ -1714,9 +1806,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/DepartmentDelete/{id}": {
@@ -1726,16 +1820,18 @@
                 ],
                 "summary": "Delete a Department by ID",
                 "operationId": "7d57f68b52145f9330153bbacc65aba4",
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "description": "Department ID",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "example": ""
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Department ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": ""
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "Deleted successfully"
@@ -1747,9 +1843,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/DepartmentByCategoryId/{category_id}": {
@@ -1759,16 +1857,18 @@
                 ],
                 "summary": "Get Department by ID",
                 "operationId": "7ef9a6f54994b8f68a73eac81d70034e",
-                "parameters": [{
-                    "name": "category_id",
-                    "in": "path",
-                    "description": "category_id",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "example": ""
+                "parameters": [
+                    {
+                        "name": "category_id",
+                        "in": "path",
+                        "description": "category_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": ""
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "Department data"
@@ -1780,9 +1880,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/DesignationList": {
@@ -1800,9 +1902,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/DesignationById/{id}": {
@@ -1812,16 +1916,18 @@
                 ],
                 "summary": "Get Designation by ID",
                 "operationId": "05bf61296d2b6f63661b022311cdf705",
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "description": "Designation ID",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "example": ""
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Designation ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": ""
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "Designation data"
@@ -1833,9 +1939,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/DesignationInsert": {
@@ -1914,9 +2022,11 @@
                         }
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/DesignationUpdate": {
@@ -1990,9 +2100,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/DesignationDelete/{id}": {
@@ -2002,16 +2114,18 @@
                 ],
                 "summary": "Delete a Designation by ID",
                 "operationId": "30a29cd991c47bc8c2d556b3d9e0738e",
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "description": "Designation ID",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "example": ""
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Designation ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": ""
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "Deleted successfully"
@@ -2023,9 +2137,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/DesignationByDepartmentId/{department_id}": {
@@ -2035,16 +2151,18 @@
                 ],
                 "summary": "Get Department by ID",
                 "operationId": "c49c28052323cbbb29ae50d1ec944342",
-                "parameters": [{
-                    "name": "department_id",
-                    "in": "path",
-                    "description": "department_id",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "example": ""
+                "parameters": [
+                    {
+                        "name": "department_id",
+                        "in": "path",
+                        "description": "department_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": ""
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "Department data"
@@ -2056,9 +2174,174 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/DeviceConnectedList": {
+            "get": {
+                "tags": [
+                    "DeviceConnected"
+                ],
+                "summary": "Get Device Connected List",
+                "operationId": "e614190060de2cba002b85ee3534e032",
+                "responses": {
+                    "200": {
+                        "description": "Device Connected List"
+                    }
+                }
+            }
+        },
+        "/api/DeviceConnectedById/{id}": {
+            "get": {
+                "tags": [
+                    "DeviceConnected"
+                ],
+                "summary": "Get Device Connected By Id",
+                "operationId": "39b9357b6a4300f088922720fb17209a",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Device Connected Data"
+                    }
+                }
+            }
+        },
+        "/api/DeviceConnectedInsert": {
+            "post": {
+                "tags": [
+                    "DeviceConnected"
+                ],
+                "summary": "Insert Device Connected",
+                "operationId": "2aa89583a4861efb56499ab33c153584",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "date": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2026-11-19"
+                                    },
+                                    "camera_name": {
+                                        "type": "string",
+                                        "example": "Camera 1"
+                                    },
+                                    "camera_ip": {
+                                        "type": "string",
+                                        "example": "192.168.1.100"
+                                    },
+                                    "connecting_status": {
+                                        "type": "string",
+                                        "example": "Connected"
+                                    },
+                                    "created_by_id": {
+                                        "type": "string",
+                                        "example": "USER_UUID"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Created Successfully"
+                    }
+                }
+            }
+        },
+        "/api/DeviceConnectedUpdate": {
+            "put": {
+                "tags": [
+                    "DeviceConnected"
+                ],
+                "summary": "Update Device Connected",
+                "operationId": "32177f088841d9320fd503e77ba2bab1",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "id"
+                                ],
+                                "properties": {
+                                    "id": {
+                                        "type": "string",
+                                        "example": "DEVICE_CONNECTED_UUID"
+                                    },
+                                    "date": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2026-11-19"
+                                    },
+                                    "camera_name": {
+                                        "type": "string",
+                                        "example": "Camera 1"
+                                    },
+                                    "camera_ip": {
+                                        "type": "string",
+                                        "example": "192.168.1.100"
+                                    },
+                                    "connecting_status": {
+                                        "type": "string",
+                                        "example": "Disconnected"
+                                    },
+                                    "updated_by_id": {
+                                        "type": "string",
+                                        "example": "USER_UUID"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Updated Successfully"
+                    }
+                }
+            }
+        },
+        "/api/DeviceConnectedDelete/{id}": {
+            "delete": {
+                "tags": [
+                    "DeviceConnected"
+                ],
+                "summary": "Delete Device Connected",
+                "operationId": "148444e2ce74e57a54057ffb6c7b4d5b",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Deleted Successfully"
+                    }
+                }
             }
         },
         "/api/FloorList": {
@@ -2076,9 +2359,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/FloorById/{id}": {
@@ -2088,16 +2373,18 @@
                 ],
                 "summary": "Get Floor by ID",
                 "operationId": "3fa1bc5a7e5d9100a978730cbd82e208",
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "description": "Floor ID",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "example": ""
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Floor ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": ""
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "Floor data"
@@ -2109,9 +2396,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/FloorInsert": {
@@ -2189,9 +2478,11 @@
                         }
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/FloorUpdate": {
@@ -2264,9 +2555,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/FloorDelete/{id}": {
@@ -2276,16 +2569,18 @@
                 ],
                 "summary": "Delete a Floor by ID",
                 "operationId": "4d5dd212fc80bea16303aafee8e46dc6",
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "description": "Floor ID",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "example": ""
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Floor ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": ""
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "Deleted successfully"
@@ -2297,9 +2592,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/GroupCameraList": {
@@ -2317,9 +2614,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/GroupCameraById/{id}": {
@@ -2329,16 +2628,18 @@
                 ],
                 "summary": "Get GroupCamera by ID",
                 "operationId": "d466ac175f993063048bf26ace4e6ba6",
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "description": "GroupCamera ID",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "example": ""
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "GroupCamera ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": ""
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "GroupCamera data"
@@ -2350,9 +2651,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/GroupCameraInsert": {
@@ -2409,9 +2712,11 @@
                         "description": "Error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/GroupCameraUpdate": {
@@ -2471,9 +2776,11 @@
                         "description": "Error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/GroupCameraDelete/{id}": {
@@ -2483,16 +2790,18 @@
                 ],
                 "summary": "Delete a GroupCamera by ID",
                 "operationId": "2a6a6db4442298bbd787ad3f4e36b587",
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "description": "GroupCamera ID",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "example": ""
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "GroupCamera ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": ""
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "Deleted successfully"
@@ -2504,9 +2813,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/GroupCameraDetailList": {
@@ -2524,9 +2835,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/UpdateSubscription": {
@@ -2568,9 +2881,11 @@
                         "description": "Device not found"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/NvrList": {
@@ -2588,9 +2903,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/NvrById/{id}": {
@@ -2600,16 +2917,18 @@
                 ],
                 "summary": "Get NVR by ID",
                 "operationId": "2849b4255542a4c02e6496f1bf209bd3",
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "description": "NVR ID",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "example": ""
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "NVR ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": ""
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "NVR data"
@@ -2621,9 +2940,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/NvrInsert": {
@@ -2749,9 +3070,11 @@
                         }
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/NvrUpdate": {
@@ -2872,9 +3195,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/NvrDelete/{id}": {
@@ -2884,16 +3209,18 @@
                 ],
                 "summary": "Delete a NVR by ID",
                 "operationId": "57ced8463ff6b4d889787dd4edcbcda1",
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "description": "NVR ID",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "example": ""
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "NVR ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": ""
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "Deleted successfully"
@@ -2905,9 +3232,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/PersonList": {
@@ -2915,19 +3244,18 @@
                 "tags": [
                     "Person"
                 ],
-                "summary": "Get list of all Persons",
+                "summary": "Get list of Persons",
                 "operationId": "8fd4c001a4badbe1b68f42d621839ad9",
                 "responses": {
                     "200": {
                         "description": "List of Persons"
-                    },
-                    "500": {
-                        "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/PersonById/{id}": {
@@ -2937,30 +3265,30 @@
                 ],
                 "summary": "Get Person by ID",
                 "operationId": "65272a6fa5992b4cc43aabf327b63047",
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "description": "Person ID",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "example": ""
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Person ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "Person data"
                     },
                     "404": {
                         "description": "Data not found"
-                    },
-                    "500": {
-                        "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/PersonInsert": {
@@ -2969,123 +3297,45 @@
                     "Person"
                 ],
                 "summary": "Insert a new Person",
-                "description": "PersonInsert",
-                "operationId": "PersonInsert",
+                "operationId": "f56812dae30a2c653cde61778d8599e5",
                 "requestBody": {
                     "required": true,
                     "content": {
                         "application/json": {
                             "schema": {
                                 "required": [
-                                    "name",
-                                    "gender",
-                                    "register_number",
-                                    "mobile_number",
-                                    "email",
-                                    "room_no",
-                                    "image",
-                                    "category_id",
-                                    "department_id",
-                                    "designation_id",
-                                    "contact_person_name",
-                                    "contact_person_number",
-                                    "is_active",
-                                    "display_order",
-                                    "created_by_id"
+                                    "name"
                                 ],
                                 "properties": {
                                     "name": {
-                                        "type": "string",
-                                        "format": "string",
-                                        "example": ""
+                                        "type": "string"
                                     },
                                     "gender": {
-                                        "type": "string",
-                                        "format": "string",
-                                        "example": "",
-                                        "nullable": true
+                                        "type": "string"
                                     },
                                     "register_number": {
-                                        "type": "string",
-                                        "format": "string",
-                                        "example": "",
-                                        "nullable": true
+                                        "type": "string"
                                     },
                                     "mobile_number": {
-                                        "type": "string",
-                                        "format": "string",
-                                        "example": "",
-                                        "nullable": true
+                                        "type": "string"
                                     },
                                     "email": {
-                                        "type": "string",
-                                        "format": "string",
-                                        "example": "",
-                                        "nullable": true
-                                    },
-                                    "room_no": {
-                                        "type": "string",
-                                        "format": "string",
-                                        "example": "",
-                                        "nullable": true
+                                        "type": "string"
                                     },
                                     "image": {
-                                        "type": "string",
-                                        "format": "string",
-                                        "example": "",
-                                        "nullable": true
+                                        "type": "string"
                                     },
                                     "address": {
-                                        "type": "string",
-                                        "format": "string",
-                                        "example": "",
-                                        "nullable": true
+                                        "type": "string"
                                     },
-                                    "category_id": {
-                                        "type": "string",
-                                        "format": "string",
-                                        "example": "",
-                                        "nullable": true
-                                    },
-                                    "department_id": {
-                                        "type": "string",
-                                        "format": "string",
-                                        "example": "",
-                                        "nullable": true
-                                    },
-                                    "designation_id": {
-                                        "type": "string",
-                                        "format": "string",
-                                        "example": "",
-                                        "nullable": true
-                                    },
-                                    "contact_person_name": {
-                                        "type": "string",
-                                        "format": "string",
-                                        "example": "",
-                                        "nullable": true
-                                    },
-                                    "contact_person_number": {
-                                        "type": "string",
-                                        "format": "string",
-                                        "example": "",
-                                        "nullable": true
-                                    },
-                                    "is_active": {
-                                        "type": "boolean",
-                                        "example": "true",
-                                        "nullable": true
+                                    "person_type_id": {
+                                        "type": "string"
                                     },
                                     "display_order": {
-                                        "type": "integer",
-                                        "format": "int64",
-                                        "example": 1,
-                                        "nullable": true
+                                        "type": "integer"
                                     },
                                     "created_by_id": {
-                                        "type": "string",
-                                        "format": "string",
-                                        "example": "b5cec1c6-8783-4e60-b88b-d49d8ae658a7"
+                                        "type": "string"
                                     }
                                 },
                                 "type": "object"
@@ -3095,28 +3345,14 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Success",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "properties": {
-                                        "status": {
-                                            "type": "integer",
-                                            "example": ""
-                                        },
-                                        "data": {
-                                            "type": "object"
-                                        }
-                                    },
-                                    "type": "object"
-                                }
-                            }
-                        }
+                        "description": "Created successfully"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/PersonUpdate": {
@@ -3133,114 +3369,41 @@
                             "schema": {
                                 "required": [
                                     "id",
-                                    "name",
-                                    "gender",
-                                    "register_number",
-                                    "mobile_number",
-                                    "email",
-                                    "room_no",
-                                    "image",
-                                    "category_id",
-                                    "department_id",
-                                    "designation_id",
-                                    "contact_person_name",
-                                    "contact_person_number",
-                                    "is_active",
-                                    "display_order",
-                                    "updated_by_id"
+                                    "name"
                                 ],
                                 "properties": {
                                     "id": {
-                                        "type": "string",
-                                        "format": "string",
-                                        "example": ""
+                                        "type": "string"
                                     },
                                     "name": {
-                                        "type": "string",
-                                        "format": "string",
-                                        "example": ""
+                                        "type": "string"
+                                    },
+                                    "gender": {
+                                        "type": "string"
                                     },
                                     "register_number": {
-                                        "type": "string",
-                                        "format": "string",
-                                        "example": "",
-                                        "nullable": true
+                                        "type": "string"
                                     },
                                     "mobile_number": {
-                                        "type": "string",
-                                        "format": "string",
-                                        "example": "",
-                                        "nullable": true
+                                        "type": "string"
                                     },
                                     "email": {
-                                        "type": "string",
-                                        "format": "string",
-                                        "example": "",
-                                        "nullable": true
-                                    },
-                                    "room_no": {
-                                        "type": "string",
-                                        "format": "string",
-                                        "example": "",
-                                        "nullable": true
+                                        "type": "string"
                                     },
                                     "image": {
-                                        "type": "string",
-                                        "format": "string",
-                                        "example": "",
-                                        "nullable": true
+                                        "type": "string"
                                     },
                                     "address": {
-                                        "type": "string",
-                                        "format": "string",
-                                        "example": "",
-                                        "nullable": true
+                                        "type": "string"
                                     },
-                                    "category_id": {
-                                        "type": "string",
-                                        "format": "string",
-                                        "example": "",
-                                        "nullable": true
-                                    },
-                                    "department_id": {
-                                        "type": "string",
-                                        "format": "string",
-                                        "example": "",
-                                        "nullable": true
-                                    },
-                                    "designation_id": {
-                                        "type": "string",
-                                        "format": "string",
-                                        "example": "",
-                                        "nullable": true
-                                    },
-                                    "contact_person_name": {
-                                        "type": "string",
-                                        "format": "string",
-                                        "example": "",
-                                        "nullable": true
-                                    },
-                                    "contact_person_number": {
-                                        "type": "string",
-                                        "format": "string",
-                                        "example": "",
-                                        "nullable": true
-                                    },
-                                    "is_active": {
-                                        "type": "boolean",
-                                        "example": "true",
-                                        "nullable": true
+                                    "person_type_id": {
+                                        "type": "string"
                                     },
                                     "display_order": {
-                                        "type": "integer",
-                                        "format": "int64",
-                                        "example": "",
-                                        "nullable": true
+                                        "type": "integer"
                                     },
                                     "updated_by_id": {
-                                        "type": "string",
-                                        "format": "string",
-                                        "example": "b5cec1c6-8783-4e60-b88b-d49d8ae658a7"
+                                        "type": "string"
                                     }
                                 },
                                 "type": "object"
@@ -3251,17 +3414,13 @@
                 "responses": {
                     "200": {
                         "description": "Updated successfully"
-                    },
-                    "404": {
-                        "description": "Data not found"
-                    },
-                    "500": {
-                        "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/PersonDelete/{id}": {
@@ -3269,305 +3428,29 @@
                 "tags": [
                     "Person"
                 ],
-                "summary": "Delete a Person by ID",
+                "summary": "Delete Person by ID",
                 "operationId": "a6e9223504b852e866630b68ce96a521",
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "description": "Person ID",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "example": ""
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Person ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "Deleted successfully"
-                    },
-                    "404": {
-                        "description": "Data not found"
-                    },
-                    "500": {
-                        "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
-            }
-        },
-        "/api/ImageInsert": {
-            "post": {
-                "tags": [
-                    "Person"
-                ],
-                "summary": "Upload Person Face Image",
-                "description": "Uploads a Base64 encoded face image, stores the image, and creates a record in the person_face table.",
-                "operationId": "ImageInsert",
-                "requestBody": {
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "required": [
-                                    "person_id",
-                                    "camera_id",
-                                    "camera_unique_id",
-                                    "date",
-                                    "title",
-                                    "filename",
-                                    "image"
-                                ],
-                                "properties": {
-                                    "person_id": {
-                                        "type": "string",
-                                        "format": "uuid",
-                                        "example": "a21920b6-cfc1-4a23-a993-462f041971a8"
-                                    },
-                                    "camera_id": {
-                                        "type": "string",
-                                        "format": "uuid",
-                                        "example": "a2315e33-13ee-4b29-ac3c-56366542947d"
-                                    },
-                                    "camera_unique_id": {
-                                        "type": "string",
-                                        "example": "CAM001"
-                                    },
-                                    "person_no": {
-                                        "type": "string",
-                                        "example": "RN2345",
-                                        "nullable": true
-                                    },
-                                    "date": {
-                                        "type": "string",
-                                        "format": "date",
-                                        "example": "2026-07-23"
-                                    },
-                                    "title": {
-                                        "type": "string",
-                                        "example": "IN"
-                                    },
-                                    "filename": {
-                                        "type": "string",
-                                        "example": "suriya-20260723-172857-033094-1.jpeg"
-                                    },
-                                    "image": {
-                                        "description": "Base64 encoded image with data URI prefix",
-                                        "type": "string",
-                                        "format": "byte",
-                                        "example": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD..."
-                                    }
-                                },
-                                "type": "object"
-                            }
-                        }
+                "security": [
+                    {
+                        "bearerAuth": []
                     }
-                },
-                "responses": {
-                    "200": {
-                        "description": "Image uploaded successfully",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "properties": {
-                                        "Type": {
-                                            "type": "string",
-                                            "example": "S"
-                                        },
-                                        "Message": {
-                                            "type": "string",
-                                            "example": "Created Successfully"
-                                        },
-                                        "Data": {
-                                            "properties": {
-                                                "id": {
-                                                    "type": "string",
-                                                    "format": "uuid"
-                                                },
-                                                "person_id": {
-                                                    "type": "string",
-                                                    "format": "uuid"
-                                                },
-                                                "camera_id": {
-                                                    "type": "string",
-                                                    "format": "uuid"
-                                                },
-                                                "camera_unique_id": {
-                                                    "type": "string",
-                                                    "example": "CAM001"
-                                                },
-                                                "person_no": {
-                                                    "type": "string",
-                                                    "example": "RN2345"
-                                                },
-                                                "date": {
-                                                    "type": "string",
-                                                    "example": "2026-07-23"
-                                                },
-                                                "title": {
-                                                    "type": "string",
-                                                    "example": "IN"
-                                                },
-                                                "image": {
-                                                    "type": "string",
-                                                    "example": "http://192.168.29.62:8000/storage/attendance/2026-07-23/suriya-20260723-172857-033094-1.jpeg"
-                                                }
-                                            },
-                                            "type": "object"
-                                        }
-                                    },
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    },
-                    "422": {
-                        "description": "Validation Error",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "properties": {
-                                        "message": {
-                                            "type": "string",
-                                            "example": "The given data was invalid."
-                                        }
-                                    },
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Internal Server Error",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "properties": {
-                                        "Type": {
-                                            "type": "string",
-                                            "example": "E"
-                                        },
-                                        "Message": {
-                                            "type": "string",
-                                            "example": "SQLSTATE error"
-                                        }
-                                    },
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    }
-                },
-                "security": [{
-                    "bearerAuth": []
-                }]
-            }
-        },
-        "/api/PersonBulkUpload": {
-            "post": {
-                "tags": [
-                    "Person"
-                ],
-                "summary": "Bulk Upload Persons From Excel",
-                "description": "Upload Excel (.xlsx, .xls, .csv) file and create persons in bulk",
-                "operationId": "PersonBulkUpload",
-                "requestBody": {
-                    "required": true,
-                    "content": {
-                        "multipart/form-data": {
-                            "schema": {
-                                "required": [
-                                    "file"
-                                ],
-                                "properties": {
-                                    "file": {
-                                        "description": "Excel File (.xlsx, .xls, .csv)",
-                                        "type": "string",
-                                        "format": "binary"
-                                    },
-                                    "created_by_id": {
-                                        "type": "string",
-                                        "example": "b5cec1c6-8783-4e60-b88b-d49d8ae658a7"
-                                    }
-                                },
-                                "type": "object"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "Upload Success",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "properties": {
-                                        "Type": {
-                                            "type": "string",
-                                            "example": "S"
-                                        },
-                                        "Message": {
-                                            "type": "string",
-                                            "example": "Upload completed"
-                                        },
-                                        "Inserted": {
-                                            "type": "integer",
-                                            "example": 100
-                                        },
-                                        "Duplicate": {
-                                            "type": "integer",
-                                            "example": 5
-                                        }
-                                    },
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Bad Request",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "properties": {
-                                        "Type": {
-                                            "type": "string",
-                                            "example": "E"
-                                        },
-                                        "Message": {
-                                            "type": "string",
-                                            "example": "Excel file required"
-                                        }
-                                    },
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Internal Server Error",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "properties": {
-                                        "Type": {
-                                            "type": "string",
-                                            "example": "E"
-                                        },
-                                        "Message": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    }
-                },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                ]
             }
         },
         "/api/AttendanceList/{start_date}/{end_date}/{student_id}": {
@@ -3577,7 +3460,8 @@
                 ],
                 "summary": "Get dashBoard by date",
                 "operationId": "9be2efb42dcc107f07b8fa03fd9b5569",
-                "parameters": [{
+                "parameters": [
+                    {
                         "name": "start_date",
                         "in": "path",
                         "description": "Start Date",
@@ -3621,9 +3505,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/PersonFaceList": {
@@ -3638,6 +3524,221 @@
                         "description": "List of person faces"
                     }
                 }
+            }
+        },
+        "/api/PersonTypeList": {
+            "get": {
+                "tags": [
+                    "PersonType"
+                ],
+                "summary": "Get list of all Person Types",
+                "operationId": "a89d1c6e256f7cd3080e1de96eff006d",
+                "responses": {
+                    "200": {
+                        "description": "List of Person Types"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/PersonTypeById/{id}": {
+            "get": {
+                "tags": [
+                    "PersonType"
+                ],
+                "summary": "Get Person Type by ID",
+                "operationId": "491898d15e5de61d8e5f1e97edd5ea1b",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Person Type ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": ""
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Person Type data"
+                    },
+                    "404": {
+                        "description": "Data not found"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/PersonTypeInsert": {
+            "post": {
+                "tags": [
+                    "PersonType"
+                ],
+                "summary": "Insert a new Person Type",
+                "description": "PersonTypeInsert",
+                "operationId": "PersonTypeInsert",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "Employee"
+                                    },
+                                    "rgb_code": {
+                                        "type": "string",
+                                        "example": "232, 235, 52",
+                                        "nullable": true
+                                    },
+                                    "hex_code": {
+                                        "type": "string",
+                                        "example": "#e8eb34",
+                                        "nullable": true
+                                    },
+                                    "created_by_id": {
+                                        "type": "string",
+                                        "example": "b5cec1c6-8783-4e60-b88b-d49d8ae658a7"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Created successfully"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/PersonTypeUpdate": {
+            "put": {
+                "tags": [
+                    "PersonType"
+                ],
+                "summary": "Update an existing Person Type",
+                "operationId": "6ab7df59061bd5e42524a3af6d820578",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "id",
+                                    "name"
+                                ],
+                                "properties": {
+                                    "id": {
+                                        "type": "string",
+                                        "example": ""
+                                    },
+                                    "name": {
+                                        "type": "string",
+                                        "example": "Employee"
+                                    },
+                                    "rgb_code": {
+                                        "type": "string",
+                                        "example": "232, 235, 52",
+                                        "nullable": true
+                                    },
+                                    "hex_code": {
+                                        "type": "string",
+                                        "example": "#e8eb34",
+                                        "nullable": true
+                                    },
+                                    "updated_by_id": {
+                                        "type": "string",
+                                        "example": "b5cec1c6-8783-4e60-b88b-d49d8ae658a7"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Updated successfully"
+                    },
+                    "404": {
+                        "description": "Data not found"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/PersonTypeDelete/{id}": {
+            "delete": {
+                "tags": [
+                    "PersonType"
+                ],
+                "summary": "Delete a Person Type by ID",
+                "operationId": "4c55d5dcc91ac42a1052de94e7895b6d",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Person Type ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": ""
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Deleted successfully"
+                    },
+                    "404": {
+                        "description": "Data not found"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/ReportStaffList": {
@@ -3711,9 +3812,11 @@
                         }
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/ReportStudentDetailList/{person_id}/{date}": {
@@ -3723,7 +3826,8 @@
                 ],
                 "summary": "Get Student Detail by ID",
                 "operationId": "ddf565d370783cdaaa882ce1b2d9818b",
-                "parameters": [{
+                "parameters": [
+                    {
                         "name": "person_id",
                         "in": "path",
                         "description": "Person ID",
@@ -3755,9 +3859,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/SectionList": {
@@ -3775,9 +3881,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/SectionById/{id}": {
@@ -3787,16 +3895,18 @@
                 ],
                 "summary": "Get Section by ID",
                 "operationId": "d37ea8413e7f53a43a6f16075ca5c74a",
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "description": "Section ID",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "example": ""
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Section ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": ""
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "Section data"
@@ -3808,9 +3918,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/SectionInsert": {
@@ -3888,9 +4000,11 @@
                         }
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/SectionUpdate": {
@@ -3963,9 +4077,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/SectionDelete/{id}": {
@@ -3975,16 +4091,18 @@
                 ],
                 "summary": "Delete a Section by ID",
                 "operationId": "fb57dee4ff45d6a4ed93c0ea355da636",
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "description": "Section ID",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "example": ""
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Section ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": ""
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "Deleted successfully"
@@ -3996,9 +4114,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/SessionList": {
@@ -4016,9 +4136,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/SessionById/{id}": {
@@ -4028,16 +4150,18 @@
                 ],
                 "summary": "Get session by ID",
                 "operationId": "7b3d3541459b3118598f7d44f963d121",
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "description": "session ID",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "example": ""
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "session ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": ""
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "session data"
@@ -4049,9 +4173,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/SessionInsert": {
@@ -4121,9 +4247,11 @@
                         }
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/SessionUpdate": {
@@ -4187,9 +4315,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/SessionDelete/{id}": {
@@ -4199,16 +4329,18 @@
                 ],
                 "summary": "Delete a session by ID",
                 "operationId": "d41b018638dbe40f3a6dd62d2623c981",
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "description": "session ID",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "example": ""
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "session ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": ""
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "Deleted successfully"
@@ -4220,9 +4352,11 @@
                         "description": "Internal server error"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/UserList": {
@@ -4240,9 +4374,11 @@
                         "description": "Super Admin role not found"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/UserById/{id}": {
@@ -4252,15 +4388,17 @@
                 ],
                 "summary": "Get user by ID",
                 "operationId": "c4aee705ae33909f274648f3e67c3fdf",
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "description": "User ID",
-                    "required": true,
-                    "schema": {
-                        "type": "string"
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "User ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "User data"
@@ -4269,9 +4407,11 @@
                         "description": "User not found"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/UserInsert": {
@@ -4317,9 +4457,11 @@
                         "description": "Email already exists"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/UserUpdate": {
@@ -4365,9 +4507,11 @@
                         "description": "Email already exists"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/UserDelete/{id}": {
@@ -4377,15 +4521,17 @@
                 ],
                 "summary": "Delete a user",
                 "operationId": "7f975e88821dfb84a2837a53394c1cb0",
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "description": "User ID",
-                    "required": true,
-                    "schema": {
-                        "type": "integer"
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "User ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "User deleted successfully"
@@ -4394,9 +4540,11 @@
                         "description": "User not found"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/UserLogin": {
@@ -4502,9 +4650,11 @@
                         "description": "Password changed successfully"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/ForgetPassword": {
@@ -4622,9 +4772,11 @@
                         "description": "Logout Successfully"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/NewUserInsert": {
@@ -4662,9 +4814,11 @@
                         "description": "User created successfully"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/DecryptPassword": {
@@ -4697,9 +4851,11 @@
                         "description": "Decrypted password"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/RefreshOneSignalUpdate": {
@@ -4749,9 +4905,11 @@
                         "description": "Email already exists"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/UserRoleList": {
@@ -4775,15 +4933,17 @@
                 ],
                 "summary": "Get user role by ID",
                 "operationId": "293c901e7819a5ce99be13c1a2551ea9",
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "required": true,
-                    "schema": {
-                        "type": "string",
-                        "format": "uuid"
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "uuid"
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "User role details"
@@ -4792,9 +4952,11 @@
                         "description": "User role not found"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/UserRoleInsert": {
@@ -4831,9 +4993,11 @@
                         "description": "Record already exists"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/UserRoleUpdate": {
@@ -4875,9 +5039,11 @@
                         "description": "Record already exists"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         },
         "/api/UserRoleDelete/{id}": {
@@ -4887,14 +5053,16 @@
                 ],
                 "summary": "Delete a user role by ID",
                 "operationId": "79c3b142374b27a5e0ba188af825b0f2",
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "required": true,
-                    "schema": {
-                        "type": "integer"
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
                     }
-                }],
+                ],
                 "responses": {
                     "200": {
                         "description": "User role deleted successfully"
@@ -4903,9 +5071,11 @@
                         "description": "User role not found"
                     }
                 },
-                "security": [{
-                    "bearerAuth": []
-                }]
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
             }
         }
     },
@@ -4918,7 +5088,12 @@
             }
         }
     },
-    "tags": [{
+    "tags": [
+        {
+            "name": "DeviceConnected",
+            "description": "Device Connected API"
+        },
+        {
             "name": "AppSettings",
             "description": "AppSettings"
         },
@@ -4969,6 +5144,10 @@
         {
             "name": "Person Face",
             "description": "Person Face"
+        },
+        {
+            "name": "PersonType",
+            "description": "PersonType"
         },
         {
             "name": "Report",

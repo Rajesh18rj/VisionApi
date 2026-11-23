@@ -15,18 +15,27 @@ class person extends BaseModel
         'face_embedding',
     ];
 
-    public function category()
-    {
-        return  $this->belongsTo('App\Http\Model\category', "category_id", "id");
-    }
+//    public function category()
+//    {
+//        return  $this->belongsTo('App\Http\Model\category', "category_id", "id");
+//    }
+//
+//    public function department()
+//    {
+//        return  $this->belongsTo('App\Http\Model\department', "department_id", "id");
+//    }
+//
+//    public function designation()
+//    {
+//        return  $this->belongsTo('App\Http\Model\designation', "designation_id", "id");
+//    }
 
-    public function department()
+    public function personType()
     {
-        return  $this->belongsTo('App\Http\Model\department', "department_id", "id");
-    }
-
-    public function designation()
-    {
-        return  $this->belongsTo('App\Http\Model\designation', "designation_id", "id");
+        return $this->belongsTo(
+            'App\Http\Model\person_type',
+            'person_type_id',
+            'id'
+        );
     }
 }

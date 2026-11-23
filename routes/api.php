@@ -38,17 +38,17 @@ Route::middleware('APIToken')->group(function () {
     Route::Put('AppSettingsUpdate', 'AppSettingsController@Update');
     Route::Delete('AppSettingsDelete/{id}', 'AppSettingsController@Delete');
 
-    Route::get('BlockList', 'BlockController@List');
-    Route::get('BlockById/{id}', 'BlockController@ById');
-    Route::post('BlockInsert', 'BlockController@Insert');
-    Route::Put('BlockUpdate', 'BlockController@Update');
-    Route::Delete('BlockDelete/{id}', 'BlockController@Delete');
+//    Route::get('BlockList', 'BlockController@List');
+//    Route::get('BlockById/{id}', 'BlockController@ById');
+//    Route::post('BlockInsert', 'BlockController@Insert');
+//    Route::Put('BlockUpdate', 'BlockController@Update');
+//    Route::Delete('BlockDelete/{id}', 'BlockController@Delete');
 
-    Route::get('FloorList', 'FloorController@List');
-    Route::get('FloorById/{id}', 'FloorController@ById');
-    Route::post('FloorInsert', 'FloorController@Insert');
-    Route::Put('FloorUpdate', 'FloorController@Update');
-    Route::Delete('FloorDelete/{id}', 'FloorController@Delete');
+//    Route::get('FloorList', 'FloorController@List');
+//    Route::get('FloorById/{id}', 'FloorController@ById');
+//    Route::post('FloorInsert', 'FloorController@Insert');
+//    Route::Put('FloorUpdate', 'FloorController@Update');
+//    Route::Delete('FloorDelete/{id}', 'FloorController@Delete');
 
     Route::get('SectionList', 'SectionController@List');
     Route::get('SectionById/{id}', 'SectionController@ById');
@@ -56,24 +56,37 @@ Route::middleware('APIToken')->group(function () {
     Route::Put('SectionUpdate', 'SectionController@Update');
     Route::Delete('SectionDelete/{id}', 'SectionController@Delete');
 
-    Route::get('NvrList', 'NvrController@List');
-    Route::get('NvrById/{id}', 'NvrController@ById');
-    Route::post('NvrInsert', 'NvrController@Insert');
-    Route::Put('NvrUpdate', 'NvrController@Update');
-    Route::Delete('NvrDelete/{id}', 'NvrController@Delete');
+//    Route::get('NvrList', 'NvrController@List');
+//    Route::get('NvrById/{id}', 'NvrController@ById');
+//    Route::post('NvrInsert', 'NvrController@Insert');
+//    Route::Put('NvrUpdate', 'NvrController@Update');
+//    Route::Delete('NvrDelete/{id}', 'NvrController@Delete');
 
-    Route::get('CameraList', 'CameraController@List');
-    Route::get('CameraById/{id}', 'CameraController@ById');
-    Route::post('CameraInsert', 'CameraController@Insert');
-    Route::Put('CameraUpdate', 'CameraController@Update');
-    Route::Delete('CameraDelete/{id}', 'CameraController@Delete');
+//    Route::get('CameraList', 'CameraController@List');
+//    Route::get('CameraById/{id}', 'CameraController@ById');
+//    Route::post('CameraInsert', 'CameraController@Insert');
+//    Route::Put('CameraUpdate', 'CameraController@Update');
+//    Route::Delete('CameraDelete/{id}', 'CameraController@Delete');
+
+    Route::get('PersonTypeList', 'PersonTypeController@List');
+    Route::get('PersonTypeById/{id}', 'PersonTypeController@ById');
+    Route::post('PersonTypeInsert', 'PersonTypeController@Insert');
+    Route::Put('PersonTypeUpdate', 'PersonTypeController@Update');
+    Route::Delete('PersonTypeDelete/{id}', 'PersonTypeController@Delete');
+
+    Route::get('DeviceConnectedList', 'DeviceConnectedController@List');
+    Route::get('DeviceConnectedById/{id}', 'DeviceConnectedController@ById');
+    Route::post('DeviceConnectedInsert', 'DeviceConnectedController@Insert');
+    Route::Put('DeviceConnectedUpdate', 'DeviceConnectedController@Update');
+    Route::Delete('DeviceConnectedDelete/{id}', 'DeviceConnectedController@Delete');
 
     Route::get('PersonList', 'PersonController@List');
     Route::get('PersonById/{id}', 'PersonController@ById');
     Route::post('PersonInsert', 'PersonController@Insert');
     Route::Put('PersonUpdate', 'PersonController@Update');
     Route::Delete('PersonDelete/{id}', 'PersonController@Delete');
-    Route::post('PersonBulkUpload', 'PersonController@PersonBulkUpload');
+    // Person Type filter dropdown
+    Route::get('PersonTypeFilterList', 'PersonController@PersonTypeFilterList');
 
     Route::get('CategoryList', 'CategoryController@List');
     Route::get('CategoryById/{id}', 'CategoryController@ById');
@@ -120,13 +133,13 @@ Route::middleware('APIToken')->group(function () {
     Route::post('ReportStaffList', 'ReportController@ReportStaffList');
     Route::get('PersonFaceList', 'PersonFaceController@PersonFaceList');
 
-    Route::get('GroupCameraList', 'GroupCameraController@List');
-    Route::get('GroupCameraById/{id}', 'GroupCameraController@ById');
-    Route::get('GroupCameraDetailById/{group_camera_id}', 'GroupCameraController@GroupCameraDetailById');
-    Route::post('GroupCameraInsert', 'GroupCameraController@Insert');
-    Route::Put('GroupCameraUpdate', 'GroupCameraController@Update');
-    Route::Delete('GroupCameraDelete/{id}', 'GroupCameraController@Delete');
-    Route::get('GroupCameraDetailList', 'GroupCameraController@GroupCameraDetailList');
+//    Route::get('GroupCameraList', 'GroupCameraController@List');
+//    Route::get('GroupCameraById/{id}', 'GroupCameraController@ById');
+//    Route::get('GroupCameraDetailById/{group_camera_id}', 'GroupCameraController@GroupCameraDetailById');
+//    Route::post('GroupCameraInsert', 'GroupCameraController@Insert');
+//    Route::Put('GroupCameraUpdate', 'GroupCameraController@Update');
+//    Route::Delete('GroupCameraDelete/{id}', 'GroupCameraController@Delete');
+//    Route::get('GroupCameraDetailList', 'GroupCameraController@GroupCameraDetailList');
 
 
 
