@@ -22,8 +22,6 @@ return new class extends Migration
             $table->string("email")->nullable();
             $table->longText("image")->nullable();
             $table->longText("address")->nullable();
-            $table->enum('category', ['Person', 'Employee'])->default('Person');
-
 
             $table->uuid("person_type_id")->nullable()->index();
             $table->foreign("person_type_id")

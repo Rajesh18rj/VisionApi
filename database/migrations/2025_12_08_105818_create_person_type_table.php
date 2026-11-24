@@ -14,6 +14,7 @@ return new class extends Migration {
         Schema::create('person_type', function (Blueprint $table) {
             BlueprintHelper::BaseEntity($table);
             $table->string("name");
+            $table->enum('category', ['Person', 'Employee'])->nullable();
             $table->string('rgb_code', 50)->nullable();
             $table->string('hex_code', 7)->nullable();
             $table->integer('display_order')->default(0);

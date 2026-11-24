@@ -2344,6 +2344,262 @@
                 }
             }
         },
+        "/api/EmployeeList": {
+            "get": {
+                "tags": [
+                    "Employee"
+                ],
+                "summary": "Get list of Employees",
+                "operationId": "a9befb6143d6b77070c89ea881cc7bfc",
+                "parameters": [
+                    {
+                        "name": "person_type_id",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "List of Employees"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/EmployeeById/{id}": {
+            "get": {
+                "tags": [
+                    "Employee"
+                ],
+                "summary": "Get Employee by ID",
+                "operationId": "425e5d19854ad85c7b561dd7597dee8f",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Employee ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Employee data"
+                    },
+                    "404": {
+                        "description": "Data not found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/EmployeeInsert": {
+            "post": {
+                "tags": [
+                    "Employee"
+                ],
+                "summary": "Insert a new Employee",
+                "operationId": "9af034f177c79bf264db2ee9db2549ae",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "name"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "gender": {
+                                        "type": "string"
+                                    },
+                                    "register_number": {
+                                        "type": "string"
+                                    },
+                                    "mobile_number": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "image": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "address": {
+                                        "type": "string"
+                                    },
+                                    "person_type_id": {
+                                        "type": "string",
+                                        "nullable": true
+                                    },
+                                    "display_order": {
+                                        "type": "integer"
+                                    },
+                                    "is_active": {
+                                        "type": "integer"
+                                    },
+                                    "created_by_id": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Created successfully"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/EmployeeUpdate": {
+            "post": {
+                "tags": [
+                    "Employee"
+                ],
+                "summary": "Update an existing Employee",
+                "operationId": "209d2b45c0ec9c542c3c802ced6cde09",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "id",
+                                    "name"
+                                ],
+                                "properties": {
+                                    "id": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "gender": {
+                                        "type": "string"
+                                    },
+                                    "register_number": {
+                                        "type": "string"
+                                    },
+                                    "mobile_number": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "image": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "image_removed": {
+                                        "type": "string"
+                                    },
+                                    "address": {
+                                        "type": "string"
+                                    },
+                                    "person_type_id": {
+                                        "type": "string",
+                                        "nullable": true
+                                    },
+                                    "display_order": {
+                                        "type": "integer"
+                                    },
+                                    "is_active": {
+                                        "type": "integer"
+                                    },
+                                    "updated_by_id": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Updated successfully"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/EmployeeDelete/{id}": {
+            "delete": {
+                "tags": [
+                    "Employee"
+                ],
+                "summary": "Delete Employee by ID",
+                "operationId": "7dfdecc537346914f4dd019bb20962cd",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Employee ID",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Deleted successfully"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/EmployeeTypeFilterList": {
+            "get": {
+                "tags": [
+                    "Employee"
+                ],
+                "summary": "Get Employee Types for Employee Master",
+                "operationId": "fbbc7910c5f0cbafb393bc18f6703259",
+                "responses": {
+                    "200": {
+                        "description": "List of Employee Types"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
         "/api/FloorList": {
             "get": {
                 "tags": [
@@ -3246,6 +3502,16 @@
                 ],
                 "summary": "Get list of Persons",
                 "operationId": "8fd4c001a4badbe1b68f42d621839ad9",
+                "parameters": [
+                    {
+                        "name": "person_type_id",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "List of Persons"
@@ -3301,7 +3567,7 @@
                 "requestBody": {
                     "required": true,
                     "content": {
-                        "application/json": {
+                        "multipart/form-data": {
                             "schema": {
                                 "required": [
                                     "name"
@@ -3323,15 +3589,20 @@
                                         "type": "string"
                                     },
                                     "image": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "format": "binary"
                                     },
                                     "address": {
                                         "type": "string"
                                     },
                                     "person_type_id": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "nullable": true
                                     },
                                     "display_order": {
+                                        "type": "integer"
+                                    },
+                                    "is_active": {
                                         "type": "integer"
                                     },
                                     "created_by_id": {
@@ -3356,16 +3627,16 @@
             }
         },
         "/api/PersonUpdate": {
-            "put": {
+            "post": {
                 "tags": [
                     "Person"
                 ],
                 "summary": "Update an existing Person",
-                "operationId": "9384471ec99db4ddb6f6ee7fb081ff69",
+                "operationId": "5a28ed12e5da2fc8957357e79ef42e48",
                 "requestBody": {
                     "required": true,
                     "content": {
-                        "application/json": {
+                        "multipart/form-data": {
                             "schema": {
                                 "required": [
                                     "id",
@@ -3391,15 +3662,23 @@
                                         "type": "string"
                                     },
                                     "image": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    },
+                                    "image_removed": {
                                         "type": "string"
                                     },
                                     "address": {
                                         "type": "string"
                                     },
                                     "person_type_id": {
-                                        "type": "string"
+                                        "type": "string",
+                                        "nullable": true
                                     },
                                     "display_order": {
+                                        "type": "integer"
+                                    },
+                                    "is_active": {
                                         "type": "integer"
                                     },
                                     "updated_by_id": {
@@ -3444,6 +3723,26 @@
                 "responses": {
                     "200": {
                         "description": "Deleted successfully"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/PersonTypeFilterList": {
+            "get": {
+                "tags": [
+                    "Person"
+                ],
+                "summary": "Get Person Types for Person Master",
+                "description": "Get all Person Types belonging to Person category.",
+                "operationId": "cabcad81b071752fb956db104faa5515",
+                "responses": {
+                    "200": {
+                        "description": "List of Person Types"
                     }
                 },
                 "security": [
@@ -3526,73 +3825,51 @@
                 }
             }
         },
-        "/api/PersonTypeList": {
+        "/PersonTypeList": {
             "get": {
                 "tags": [
-                    "PersonType"
+                    "Person Type"
                 ],
-                "summary": "Get list of all Person Types",
-                "operationId": "a89d1c6e256f7cd3080e1de96eff006d",
+                "summary": "Get all Person Types",
+                "operationId": "f6e02a56fde478f719ad0114c123eb52",
                 "responses": {
                     "200": {
-                        "description": "List of Person Types"
-                    },
-                    "500": {
-                        "description": "Internal server error"
+                        "description": "Success"
                     }
-                },
-                "security": [
-                    {
-                        "bearerAuth": []
-                    }
-                ]
+                }
             }
         },
-        "/api/PersonTypeById/{id}": {
+        "/PersonTypeById/{id}": {
             "get": {
                 "tags": [
-                    "PersonType"
+                    "Person Type"
                 ],
                 "summary": "Get Person Type by ID",
-                "operationId": "491898d15e5de61d8e5f1e97edd5ea1b",
+                "operationId": "d3b918c8f38d6223a23d59930e565572",
                 "parameters": [
                     {
                         "name": "id",
                         "in": "path",
-                        "description": "Person Type ID",
                         "required": true,
                         "schema": {
-                            "type": "string",
-                            "example": ""
+                            "type": "string"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Person Type data"
-                    },
-                    "404": {
-                        "description": "Data not found"
-                    },
-                    "500": {
-                        "description": "Internal server error"
+                        "description": "Success"
                     }
-                },
-                "security": [
-                    {
-                        "bearerAuth": []
-                    }
-                ]
+                }
             }
         },
-        "/api/PersonTypeInsert": {
+        "/PersonTypeInsert": {
             "post": {
                 "tags": [
-                    "PersonType"
+                    "Person Type"
                 ],
-                "summary": "Insert a new Person Type",
-                "description": "PersonTypeInsert",
-                "operationId": "PersonTypeInsert",
+                "summary": "Insert Person Type",
+                "operationId": "d6aee5da290cf808010445f67eb7b90f",
                 "requestBody": {
                     "required": true,
                     "content": {
@@ -3603,22 +3880,18 @@
                                 ],
                                 "properties": {
                                     "name": {
-                                        "type": "string",
-                                        "example": "Employee"
+                                        "type": "string"
                                     },
-                                    "rgb_code": {
+                                    "category": {
                                         "type": "string",
-                                        "example": "232, 235, 52",
+                                        "enum": [
+                                            "General",
+                                            "Employee"
+                                        ],
                                         "nullable": true
                                     },
-                                    "hex_code": {
-                                        "type": "string",
-                                        "example": "#e8eb34",
-                                        "nullable": true
-                                    },
-                                    "created_by_id": {
-                                        "type": "string",
-                                        "example": "b5cec1c6-8783-4e60-b88b-d49d8ae658a7"
+                                    "display_order": {
+                                        "type": "integer"
                                     }
                                 },
                                 "type": "object"
@@ -3628,26 +3901,18 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Created successfully"
-                    },
-                    "500": {
-                        "description": "Internal server error"
+                        "description": "Success"
                     }
-                },
-                "security": [
-                    {
-                        "bearerAuth": []
-                    }
-                ]
+                }
             }
         },
-        "/api/PersonTypeUpdate": {
+        "/PersonTypeUpdate": {
             "put": {
                 "tags": [
-                    "PersonType"
+                    "Person Type"
                 ],
-                "summary": "Update an existing Person Type",
-                "operationId": "6ab7df59061bd5e42524a3af6d820578",
+                "summary": "Update Person Type",
+                "operationId": "5d4be6d6a9c98e4762d7681625139c61",
                 "requestBody": {
                     "required": true,
                     "content": {
@@ -3659,26 +3924,21 @@
                                 ],
                                 "properties": {
                                     "id": {
-                                        "type": "string",
-                                        "example": ""
+                                        "type": "string"
                                     },
                                     "name": {
-                                        "type": "string",
-                                        "example": "Employee"
+                                        "type": "string"
                                     },
-                                    "rgb_code": {
+                                    "category": {
                                         "type": "string",
-                                        "example": "232, 235, 52",
+                                        "enum": [
+                                            "General",
+                                            "Employee"
+                                        ],
                                         "nullable": true
                                     },
-                                    "hex_code": {
-                                        "type": "string",
-                                        "example": "#e8eb34",
-                                        "nullable": true
-                                    },
-                                    "updated_by_id": {
-                                        "type": "string",
-                                        "example": "b5cec1c6-8783-4e60-b88b-d49d8ae658a7"
+                                    "display_order": {
+                                        "type": "integer"
                                     }
                                 },
                                 "type": "object"
@@ -3688,57 +3948,33 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Updated successfully"
-                    },
-                    "404": {
-                        "description": "Data not found"
-                    },
-                    "500": {
-                        "description": "Internal server error"
+                        "description": "Success"
                     }
-                },
-                "security": [
-                    {
-                        "bearerAuth": []
-                    }
-                ]
+                }
             }
         },
-        "/api/PersonTypeDelete/{id}": {
+        "/PersonTypeDelete/{id}": {
             "delete": {
                 "tags": [
-                    "PersonType"
+                    "Person Type"
                 ],
-                "summary": "Delete a Person Type by ID",
-                "operationId": "4c55d5dcc91ac42a1052de94e7895b6d",
+                "summary": "Delete Person Type",
+                "operationId": "f4cc5dd24beebb232523feb8787eb1c7",
                 "parameters": [
                     {
                         "name": "id",
                         "in": "path",
-                        "description": "Person Type ID",
                         "required": true,
                         "schema": {
-                            "type": "string",
-                            "example": ""
+                            "type": "string"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "Deleted successfully"
-                    },
-                    "404": {
-                        "description": "Data not found"
-                    },
-                    "500": {
-                        "description": "Internal server error"
+                        "description": "Success"
                     }
-                },
-                "security": [
-                    {
-                        "bearerAuth": []
-                    }
-                ]
+                }
             }
         },
         "/api/ReportStaffList": {
@@ -5094,6 +5330,10 @@
             "description": "Device Connected API"
         },
         {
+            "name": "Person Type",
+            "description": "Person Type API"
+        },
+        {
             "name": "AppSettings",
             "description": "AppSettings"
         },
@@ -5122,6 +5362,10 @@
             "description": "Designation"
         },
         {
+            "name": "Employee",
+            "description": "Employee"
+        },
+        {
             "name": "Floor",
             "description": "Floor"
         },
@@ -5144,10 +5388,6 @@
         {
             "name": "Person Face",
             "description": "Person Face"
-        },
-        {
-            "name": "PersonType",
-            "description": "PersonType"
         },
         {
             "name": "Report",

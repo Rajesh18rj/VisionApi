@@ -88,6 +88,13 @@ Route::middleware('APIToken')->group(function () {
     // Person Type filter dropdown
     Route::get('PersonTypeFilterList', 'PersonController@PersonTypeFilterList');
 
+    Route::get('EmployeeList', 'EmployeeController@List');
+    Route::get('EmployeeById/{id}', 'EmployeeController@ById');
+    Route::post('EmployeeInsert', 'EmployeeController@Insert');
+    Route::put('EmployeeUpdate', 'EmployeeController@Update');
+    Route::delete('EmployeeDelete/{id}', 'EmployeeController@Delete');
+    Route::get('EmployeeTypeFilterList', 'EmployeeController@EmployeeTypeFilterList');
+
     Route::get('CategoryList', 'CategoryController@List');
     Route::get('CategoryById/{id}', 'CategoryController@ById');
     Route::post('CategoryInsert', 'CategoryController@Insert');

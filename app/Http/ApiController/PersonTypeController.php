@@ -4,71 +4,60 @@ namespace App\Http\ApiController;
 
 use App\Http\Controllers\Controller;
 use App\Http\Model\person_type;
-use Exception;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
+use Exception;
 
+/**
+ * @OA\Tag(
+ *     name="Person Type",
+ *     description="Person Type API"
+ * )
+ */
 class PersonTypeController extends Controller
 {
-    public function __construct()
-    {
-    }
-
     /**
      * @OA\Get(
-     *     path="/api/PersonTypeList",
-     *     summary="Get list of all Person Types",
-     *     tags={"PersonType"},
-     *     security={{"bearerAuth":{}}},
-     *     @OA\Response(
-     *         response=200,
-     *         description="List of Person Types"
-     *     ),
-     *     @OA\Response(
-     *         response=500,
-     *         description="Internal server error"
-     *     )
+     *     path="/PersonTypeList",
+     *     tags={"Person Type"},
+     *     summary="Get all Person Types",
+     *     @OA\Response(response=200, description="Success")
      * )
      */
     public function List()
     {
         try {
-            $data = person_type::all();
+            $data = person_type::orderBy('display_order', 'asc')
+                ->get();
 
-            return response($data);
+            return response()->json([
+                "Type" => "S",
+                "Message" => "Success",
+                "Data" => $data
+            ]);
+
         } catch (Exception $e) {
-            return response([
+
+            return response()->json([
                 "Type" => "E",
                 "Message" => $e->getMessage()
-            ]);
+            ], 500);
         }
     }
 
     /**
      * @OA\Get(
-     *     path="/api/PersonTypeById/{id}",
+     *     path="/PersonTypeById/{id}",
+     *     tags={"Person Type"},
      *     summary="Get Person Type by ID",
-     *     tags={"PersonType"},
-     *     security={{"bearerAuth":{}}},
      *     @OA\Parameter(
      *         name="id",
      *         in="path",
      *         required=true,
-     *         description="Person Type ID",
-     *         @OA\Schema(type="string", example="")
+     *         @OA\Schema(type="string")
      *     ),
-     *     @OA\Response(
-     *         response=200,
-     *         description="Person Type data"
-     *     ),
-     *     @OA\Response(
-     *         response=404,
-     *         description="Data not found"
-     *     ),
-     *     @OA\Response(
-     *         response=500,
-     *         description="Internal server error"
-     *     )
+     *     @OA\Response(response=200, description="Success")
      * )
      */
     public function ById($id)
@@ -76,227 +65,224 @@ class PersonTypeController extends Controller
         try {
             $data = person_type::find($id);
 
-            if (empty($data)) {
-                return response([
-                    "Type" => "S",
-                    "Message" => "Data Not Found"
-                ]);
+            if (!$data) {
+                return response()->json([
+                    "Type" => "E",
+                    "Message" => "Person Type not found"
+                ], 404);
             }
 
-            return response($data);
+            return response()->json([
+                "Type" => "S",
+                "Message" => "Success",
+                "Data" => $data
+            ]);
+
         } catch (Exception $e) {
-            return response([
+
+            return response()->json([
                 "Type" => "E",
                 "Message" => $e->getMessage()
-            ]);
+            ], 500);
         }
     }
 
     /**
      * @OA\Post(
-     *     path="/api/PersonTypeInsert",
-     *     operationId="PersonTypeInsert",
-     *     tags={"PersonType"},
-     *     summary="Insert a new Person Type",
-     *     security={{"bearerAuth":{}}},
-     *     description="PersonTypeInsert",
+     *     path="/PersonTypeInsert",
+     *     tags={"Person Type"},
+     *     summary="Insert Person Type",
      *     @OA\RequestBody(
      *         required=true,
      *         @OA\JsonContent(
      *             required={"name"},
+     *             @OA\Property(property="name", type="string"),
      *             @OA\Property(
-     *                 property="name",
+     *                 property="category",
      *                 type="string",
-     *                 example="Employee"
+     *                 nullable=true,
+     *                 enum={"General","Employee"}
      *             ),
-     *             @OA\Property(
-     *                 property="rgb_code",
-     *                 type="string",
-     *                 example="232, 235, 52",
-     *                 nullable=true
-     *             ),
-     *             @OA\Property(
-     *                 property="hex_code",
-     *                 type="string",
-     *                 example="#e8eb34",
-     *                 nullable=true
-     *             ),
-     *             @OA\Property(
-     *                 property="created_by_id",
-     *                 type="string",
-     *                 example="b5cec1c6-8783-4e60-b88b-d49d8ae658a7"
-     *             )
+     *             @OA\Property(property="display_order", type="integer")
      *         )
      *     ),
-     *     @OA\Response(
-     *         response=200,
-     *         description="Created successfully"
-     *     ),
-     *     @OA\Response(
-     *         response=500,
-     *         description="Internal server error"
-     *     )
+     *     @OA\Response(response=200, description="Success")
      * )
      */
     public function Insert(Request $request)
     {
         try {
-            $data = new person_type();
-            $data = $request->only($data->fillable);
+            $validator = Validator::make($request->all(), [
+                'name' => 'required|string|max:255',
+                'category' => 'nullable|in:General,Employee',
+                'display_order' => 'nullable|integer'
+            ]);
 
-            if (person_type::where('name', $data["name"])->count() > 0) {
-                return response([
+            if ($validator->fails()) {
+                return response()->json([
                     "Type" => "E",
-                    "Message" => "Record already exists"
+                    "Message" => $validator->errors()->first()
+                ], 422);
+            }
+
+            $duplicate = person_type::where(
+                'name',
+                $request->name
+            )->exists();
+
+            if ($duplicate) {
+                return response()->json([
+                    "Type" => "E",
+                    "Message" => "Person Type already exists"
                 ]);
             }
 
-            $result = person_type::create($data);
+            $data = new person_type();
 
-            return response([
+            $data->name = $request->name;
+            $data->category = $request->category;
+            $data->display_order = $request->display_order ?? 0;
+
+            $data->save();
+
+            return response()->json([
                 "Type" => "S",
-                "Message" => "Created successfully",
-                "Id" => $result["id"]
+                "Message" => "Person Type created successfully",
+                "Id" => $data->id
             ]);
+
         } catch (Exception $e) {
-            return response([
+
+            return response()->json([
                 "Type" => "E",
                 "Message" => $e->getMessage()
-            ]);
+            ], 500);
         }
     }
 
     /**
      * @OA\Put(
-     *     path="/api/PersonTypeUpdate",
-     *     summary="Update an existing Person Type",
-     *     tags={"PersonType"},
-     *     security={{"bearerAuth":{}}},
+     *     path="/PersonTypeUpdate",
+     *     tags={"Person Type"},
+     *     summary="Update Person Type",
      *     @OA\RequestBody(
      *         required=true,
      *         @OA\JsonContent(
      *             required={"id","name"},
+     *             @OA\Property(property="id", type="string"),
+     *             @OA\Property(property="name", type="string"),
      *             @OA\Property(
-     *                 property="id",
+     *                 property="category",
      *                 type="string",
-     *                 example=""
+     *                 nullable=true,
+     *                 enum={"General","Employee"}
      *             ),
-     *             @OA\Property(
-     *                 property="name",
-     *                 type="string",
-     *                 example="Employee"
-     *             ),
-     *             @OA\Property(
-     *                 property="rgb_code",
-     *                 type="string",
-     *                 example="232, 235, 52",
-     *                 nullable=true
-     *             ),
-     *             @OA\Property(
-     *                 property="hex_code",
-     *                 type="string",
-     *                 example="#e8eb34",
-     *                 nullable=true
-     *             ),
-     *             @OA\Property(
-     *                 property="updated_by_id",
-     *                 type="string",
-     *                 example="b5cec1c6-8783-4e60-b88b-d49d8ae658a7"
-     *             )
+     *             @OA\Property(property="display_order", type="integer")
      *         )
      *     ),
-     *     @OA\Response(
-     *         response=200,
-     *         description="Updated successfully"
-     *     ),
-     *     @OA\Response(
-     *         response=404,
-     *         description="Data not found"
-     *     ),
-     *     @OA\Response(
-     *         response=500,
-     *         description="Internal server error"
-     *     )
+     *     @OA\Response(response=200, description="Success")
      * )
      */
     public function Update(Request $request)
     {
         try {
-            $data = new person_type();
-            $data = $request->only($data->fillable);
+            $validator = Validator::make($request->all(), [
+                'id' => 'required',
+                'name' => 'required|string|max:255',
+                'category' => 'nullable|in:General,Employee',
+                'display_order' => 'nullable|integer'
+            ]);
 
-            if (
-                person_type::where('id', '!=', $data["id"])
-                    ->where('name', $data["name"])
-                    ->count() > 0
-            ) {
-                return response([
+            if ($validator->fails()) {
+                return response()->json([
                     "Type" => "E",
-                    "Message" => "Record already exists"
+                    "Message" => $validator->errors()->first()
+                ], 422);
+            }
+
+            $data = person_type::find($request->id);
+
+            if (!$data) {
+                return response()->json([
+                    "Type" => "E",
+                    "Message" => "Person Type not found"
+                ], 404);
+            }
+
+            $duplicate = person_type::where(
+                'name',
+                $request->name
+            )
+                ->where('id', '!=', $request->id)
+                ->exists();
+
+            if ($duplicate) {
+                return response()->json([
+                    "Type" => "E",
+                    "Message" => "Person Type already exists"
                 ]);
             }
 
-            person_type::findOrFail($data['id'])->update($data);
+            $data->name = $request->name;
+            $data->category = $request->category;
+            $data->display_order = $request->display_order ?? 0;
 
-            return response([
+            $data->save();
+
+            return response()->json([
                 "Type" => "S",
-                "Message" => "Updated successfully",
-                "Id" => $data['id']
+                "Message" => "Person Type updated successfully",
+                "Id" => $data->id
             ]);
+
         } catch (Exception $e) {
-            return response([
+
+            return response()->json([
                 "Type" => "E",
                 "Message" => $e->getMessage()
-            ]);
+            ], 500);
         }
     }
 
     /**
      * @OA\Delete(
-     *     path="/api/PersonTypeDelete/{id}",
-     *     summary="Delete a Person Type by ID",
-     *     tags={"PersonType"},
-     *     security={{"bearerAuth":{}}},
+     *     path="/PersonTypeDelete/{id}",
+     *     tags={"Person Type"},
+     *     summary="Delete Person Type",
      *     @OA\Parameter(
      *         name="id",
      *         in="path",
      *         required=true,
-     *         description="Person Type ID",
-     *         @OA\Schema(type="string", example="")
+     *         @OA\Schema(type="string")
      *     ),
-     *     @OA\Response(
-     *         response=200,
-     *         description="Deleted successfully"
-     *     ),
-     *     @OA\Response(
-     *         response=404,
-     *         description="Data not found"
-     *     ),
-     *     @OA\Response(
-     *         response=500,
-     *         description="Internal server error"
-     *     )
+     *     @OA\Response(response=200, description="Success")
      * )
      */
     public function Delete($id)
     {
         try {
-            person_type::findOrFail($id)->delete();
+            $data = person_type::find($id);
 
-            return response([
-                "Type" => "S",
-                "Message" => "Deleted successfully"
-            ]);
-        } catch (ModelNotFoundException $e) {
+            if (!$data) {
+                return response()->json([
+                    "Type" => "E",
+                    "Message" => "Person Type not found"
+                ], 404);
+            }
+
+            $data->delete();
+
             return response()->json([
-                'Type' => 'E',
-                'Message' => 'Data Not Found'
-            ], 404);
+                "Type" => "S",
+                "Message" => "Person Type deleted successfully"
+            ]);
+
         } catch (Exception $e) {
-            return response([
+
+            return response()->json([
                 "Type" => "E",
                 "Message" => $e->getMessage()
-            ]);
+            ], 500);
         }
     }
 }
